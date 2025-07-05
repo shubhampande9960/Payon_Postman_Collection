@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "4c1dadea-abd7-4fd2-b0a2-8cdc617886b3",
+		"name": "PayOn",
+		"description": "The Open Payment Platform is a single unified RESTful API allowing access to the complete set of the Open Payment Platform features and frontend widgets. Choose an option below to get started.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26578823",
+		"_collection_link": "https://lively-shadow-987720.postman.co/workspace/New-Team-Workspace~94caa563-f82f-4679-a1b7-c2cf7c09db98/collection/26578823-4c1dadea-abd7-4fd2-b0a2-8cdc617886b3?action=share&source=collection_link&creator=26578823"
+	},
+	"item": [
+		{
+			"name": "Checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "entityId",
+							"value": "8a8294174b7ecb28014b9699220015ca",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "92.00",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "EUR",
+							"type": "text"
+						},
+						{
+							"key": "paymentType",
+							"value": "DB",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://eu-test.oppwa.com/v1/checkouts",
+					"protocol": "https",
+					"host": [
+						"eu-test",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"v1",
+						"checkouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Server-to-Server",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "entityId",
+							"value": "8a8294174b7ecb28014b9699220015ca",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "92.00",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "EUR",
+							"type": "text"
+						},
+						{
+							"key": "paymentBrand",
+							"value": "VISA",
+							"type": "text"
+						},
+						{
+							"key": "paymentType",
+							"value": "DB",
+							"type": "text"
+						},
+						{
+							"key": "card.number",
+							"value": "4200000000000000",
+							"type": "text"
+						},
+						{
+							"key": "card.holder",
+							"value": "Jane Jones",
+							"type": "text"
+						},
+						{
+							"key": "card.expiryMonth",
+							"value": "05",
+							"type": "text"
+						},
+						{
+							"key": "card.expiryYear",
+							"value": "2034",
+							"type": "text"
+						},
+						{
+							"key": "card.cvv",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://eu-test.oppwa.com/v1/payments",
+					"protocol": "https",
+					"host": [
+						"eu-test",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://eu-test.oppwa.com/v1/payments/8ac7a4a28e83059b018e84b41b51302f?entityId=8a8294174b7ecb28014b9699220015ca",
+					"protocol": "https",
+					"host": [
+						"eu-test",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"8ac7a4a28e83059b018e84b41b51302f"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "8a8294174b7ecb28014b9699220015ca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get status Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://eu-test.oppwa.com/v1/payments/8ac7a4a28e83059b018e84b41b51302f?entityId=8a8294174b7ecb28014b9699220015ca",
+					"protocol": "https",
+					"host": [
+						"eu-test",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"8ac7a4a28e83059b018e84b41b51302f"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "8a8294174b7ecb28014b9699220015ca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get settlement report",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGFjZGE0Y2Q4MjYyYTAzZDAxODI2MzBjZWFmODAwM2R8Tlo4SnBqMlJ4Qw==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://eu-prod.oppwa.com/reports/v1/reconciliations/aggregations?entityId=8acda4cd8262a03d0182630ceaf7003b&date.from=2024-11-22&date.to=2024-11-22",
+					"protocol": "https",
+					"host": [
+						"eu-prod",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"reports",
+						"v1",
+						"reconciliations",
+						"aggregations"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "8acda4cd8262a03d0182630ceaf7003b"
+						},
+						{
+							"key": "date.from",
+							"value": "2024-11-22"
+						},
+						{
+							"key": "date.to",
+							"value": "2024-11-22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://eu-test.oppwa.com/v3/query/8ac7a4a28e83059b018e84b41b51302f?entityId=8a8294174b7ecb28014b9699220015ca",
+					"protocol": "https",
+					"host": [
+						"eu-test",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"v3",
+						"query",
+						"8ac7a4a28e83059b018e84b41b51302f"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "8a8294174b7ecb28014b9699220015ca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction using short Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://eu-test.oppwa.com/v3/query?entityId=8a8294174b7ecb28014b9699220015ca&merchantTransactionId=test123&shortId=1054.0740.5938",
+					"protocol": "https",
+					"host": [
+						"eu-test",
+						"oppwa",
+						"com"
+					],
+					"path": [
+						"v3",
+						"query"
+					],
+					"query": [
+						{
+							"key": "entityId",
+							"value": "8a8294174b7ecb28014b9699220015ca"
+						},
+						{
+							"key": "merchantTransactionId",
+							"value": "test123"
+						},
+						{
+							"key": "shortId",
+							"value": "1054.0740.5938"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "uuid",
+			"value": "id"
+		}
+	]
+}
